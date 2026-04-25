@@ -13,9 +13,6 @@
   <meta property="og:url" content="https://leadaro.org/">
   <meta property="og:site_name" content="Leadaro">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <script type="application/ld+json">
   {
@@ -87,73 +84,112 @@
       </a>
       <nav class="nav-links" aria-label="ניווט ראשי">
         <a href="#process">מה בודקים</a>
+        <a href="#workflow">איך זה עובד</a>
         <a href="#pricing">מחיר</a>
         <a href="#faq">שאלות</a>
         <a href="#fit">בדיקת התאמה</a>
       </nav>
+      <a class="nav-cta" href="#fit" data-primary-cta data-location="nav">בדיקת התאמה</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div class="container hero-grid">
-        <div>
+        <div class="hero-copy">
           <p class="eyebrow">בדיקת 14 יום ליועצי משכנתאות שמקבלים 30+ פניות בחודש</p>
           <h1>כמה לידים חוזרים אליך בלי פולואפ סדור?</h1>
           <p class="hero-subtitle">Leadaro בודקת איפה פניות חדשות נופלות בתהליך המכירה, ומקימה תהליך מעקב בסיסי שמסכם לידים, פותח משימות ומזכיר לחזור ללקוחות.</p>
           <p class="roi-line">עסקה אחת שהתאוששה מליד שלא טופל בזמן יכולה לכסות את עלות הבדיקה כמה פעמים.</p>
+          <div class="credibility-row" aria-label="מאפייני הבדיקה">
+            <span>מקור לידים אחד</span>
+            <span>14 יום</span>
+            <span>בלי CRM חדש</span>
+            <span>בלי התחייבות ארוכה</span>
+          </div>
           <div class="cta-row">
             <a class="button button-primary" href="#fit" data-primary-cta data-location="hero">בדיקת התאמה ב־₪990</a>
             <a class="button button-secondary" href="#" data-whatsapp-link data-location="hero">דבר איתי בוואטסאפ</a>
           </div>
         </div>
 
-        <div class="hero-card" aria-label="תצוגת תהליך מעקב לידים">
-          <div class="board-top">
-            <span class="board-title">מעקב פניות חדשות</span>
-            <span class="board-badge">14 יום</span>
-          </div>
-          <div class="lead-board">
-            <div class="lead-row">
+        <div class="hero-visual" aria-label="שכבת עבודה לדוגמה של מעקב לידים">
+          <div class="ops-shell">
+            <div class="ops-topbar">
               <div>
-                <strong>פנייה חדשה ללא חזרה</strong>
-                <span>נכנסה אתמול, אין משימה פתוחה</span>
+                <span class="ops-label">Leadaro</span>
+                <strong>בדיקת תהליך מכירה</strong>
               </div>
-              <span class="status status-risk">בסיכון</span>
+              <span class="board-badge">יום 6 מתוך 14</span>
             </div>
-            <div class="lead-row">
+
+            <div class="ops-summary">
               <div>
-                <strong>שיחה ראשונה התקיימה</strong>
-                <span>צריך פולואפ עם מסמכים</span>
+                <span>ליד חדש</span>
+                <strong>3</strong>
               </div>
-              <span class="status status-task">משימה</span>
+              <div>
+                <span>משימות פתוחות</span>
+                <strong>7</strong>
+              </div>
+              <div>
+                <span>פולואפ מאוחר</span>
+                <strong>2</strong>
+              </div>
             </div>
-            <div class="lead-row">
-              <div>
-                <strong>לקוח ביקש לחזור אליו</strong>
-                <span>תזכורת להיום אחר הצהריים</span>
-              </div>
-              <span class="status status-follow">לחזור</span>
+
+            <div class="ops-board">
+              <article class="ops-card ops-card-strong">
+                <span class="card-kicker">ליד חדש</span>
+                <strong>פנייה מוואטסאפ</strong>
+                <p>לקוח ביקש בדיקה ראשונית, אין המשך מתועד.</p>
+              </article>
+
+              <article class="ops-card">
+                <span class="card-kicker">סיכום פנימי</span>
+                <p>שיחה התקיימה, חסרים מסמכים ונדרש תיאום חזרה.</p>
+              </article>
+
+              <article class="ops-card">
+                <span class="card-kicker">סטטוס</span>
+                <span class="status status-risk">בסיכון</span>
+              </article>
+
+              <article class="ops-card">
+                <span class="card-kicker">משימת פולואפ</span>
+                <strong>לחזור היום עד 16:30</strong>
+              </article>
+
+              <article class="ops-card report-card">
+                <span class="card-kicker">דוח קצר</span>
+                <p>2 פניות בלי המשך ברור, מקור עיקרי: וואטסאפ.</p>
+              </article>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="process">
+    <section class="section problem-section" id="process">
       <div class="container">
-        <h2>מה Leadaro בודקת בפועל</h2>
-        <p class="section-lead">המטרה היא לא להחליף את שיטת העבודה שלך, אלא לזהות איפה פניות חדשות מאבדות מומנטום ולהקים שכבת מעקב בסיסית שמחזירה סדר לתהליך.</p>
-        <div class="grid-3">
+        <div class="section-heading">
+          <span class="section-tag">הבעיה</span>
+          <h2>לא כל ליד נופל בגלל חוסר עניין. חלק נופלים כי אין תהליך חזרה ברור.</h2>
+          <p class="section-lead">המטרה היא לא להחליף את שיטת העבודה שלך, אלא לזהות איפה פניות חדשות מאבדות מומנטום ולהקים שכבת מעקב בסיסית שמחזירה סדר לתהליך.</p>
+        </div>
+        <div class="grid-3 metric-grid">
           <article class="info-card">
+            <span class="card-index">01</span>
             <h3>איפה הליד נכנס</h3>
             <p>בודקים מאילו מקורות מגיעות רוב הפניות ואיפה הן מתחילות להתפזר לפני שיש מעקב ברור.</p>
           </article>
           <article class="info-card">
+            <span class="card-index">02</span>
             <h3>מתי נוצר פער</h3>
             <p>מזהים פניות שלא קיבלו חזרה בזמן, שיחות בלי המשך ברור, ותזכורות שלא נפתחו.</p>
           </article>
           <article class="info-card">
+            <span class="card-index">03</span>
             <h3>מה צריך לקרות עכשיו</h3>
             <p>מקימים סיכום בסיסי, משימות ותזכורות כדי שהפנייה הבאה לא תישאר בזיכרון בלבד.</p>
           </article>
@@ -161,9 +197,12 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="workflow">
       <div class="container">
-        <h2>איך נראים 14 הימים</h2>
+        <div class="section-heading compact-heading">
+          <span class="section-tag">מהלך הבדיקה</span>
+          <h2>איך נראים 14 הימים</h2>
+        </div>
         <div class="steps">
           <article class="step">
             <div>
@@ -187,11 +226,41 @@
       </div>
     </section>
 
-    <section class="section section-soft" id="pricing" data-pricing>
-      <div class="container pricing-wrap">
+    <section class="section section-split">
+      <div class="container split-grid">
         <div>
+          <span class="section-tag">וואטסאפ</span>
+          <h2>כשהפניות מגיעות בוואטסאפ, נקודת הנפילה היא בדרך כלל אחרי השיחה הראשונה.</h2>
+          <p class="section-lead">Leadaro מתמקדת במעבר בין שיחה פתוחה לבין סיכום פנימי, סטטוס ומשימת חזרה. וואטסאפ נשאר מקור הפנייה; המעקב הופך ברור יותר.</p>
+        </div>
+        <div class="channel-panel">
+          <div class="channel-row">
+            <span>פנייה נכנסת</span>
+            <strong>וואטסאפ</strong>
+          </div>
+          <div class="channel-row">
+            <span>פעולה נדרשת</span>
+            <strong>סיכום + משימת פולואפ</strong>
+          </div>
+          <div class="channel-row">
+            <span>בקרה</span>
+            <strong>דוח קצר בסוף הבדיקה</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing-section" id="pricing" data-pricing>
+      <div class="container pricing-wrap">
+        <div class="pricing-copy">
+          <span class="section-tag">ההצעה</span>
           <h2>בדיקת Leadaro — ₪990 ל־14 יום</h2>
           <p class="section-lead">הבדיקה מיועדת ליועצי משכנתאות עם נפח פניות שמצדיק תהליך מעקב מסודר, גם אם התהליך עדיין פשוט.</p>
+          <div class="pricing-notes">
+            <span>בלי התחייבות ארוכה</span>
+            <span>תהליך אחד</span>
+            <span>מוקד על לידים קיימים</span>
+          </div>
         </div>
         <aside class="price-panel">
           <p class="eyebrow">מחיר פתיחה</p>
@@ -202,9 +271,98 @@
       </div>
     </section>
 
-    <section class="section" id="fit">
+    <section class="section example-section">
+      <div class="container example-grid">
+        <div class="example-copy">
+          <span class="section-tag">דוגמה</span>
+          <h2>כך נראית פנייה אחת כשהיא לא נשארת רק בזיכרון.</h2>
+          <p class="section-lead">הדוגמה לא מחליפה את שיטת העבודה שלך. היא מראה איך פנייה חדשה מקבלת סיכום, סטטוס ומשימה ברורה להמשך.</p>
+        </div>
+        <article class="example-card" aria-label="דוגמת ליד">
+          <div class="example-header">
+            <span>ליד חדש</span>
+            <strong>מקור: וואטסאפ</strong>
+          </div>
+          <dl>
+            <div>
+              <dt>סיכום פנימי</dt>
+              <dd>לקוח התעניין במחזור, ביקש חזרה אחרי איסוף מסמכים.</dd>
+            </div>
+            <div>
+              <dt>סטטוס</dt>
+              <dd>ממתין למסמכים</dd>
+            </div>
+            <div>
+              <dt>משימת פולואפ</dt>
+              <dd>לחזור היום אחר הצהריים</dd>
+            </div>
+            <div>
+              <dt>דוח קצר</dt>
+              <dd>פנייה שלא קיבלה המשך הייתה נעלמת בלי משימה פתוחה.</dd>
+            </div>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="section fit-section" id="fit-check">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag">התאמה</span>
+          <h2>למי זה מתאים, ולמי פחות</h2>
+        </div>
+        <div class="fit-grid">
+          <article class="fit-card">
+            <h3>מתאים אם</h3>
+            <ul>
+              <li>נכנסות לפחות 30 פניות חדשות בחודש.</li>
+              <li>רוב הפניות מגיעות ממקור אחד או כמה מקורות קבועים.</li>
+              <li>יש תחושה שחלק מהלידים לא מקבלים חזרה בזמן.</li>
+            </ul>
+          </article>
+          <article class="fit-card muted-card">
+            <h3>פחות מתאים אם</h3>
+            <ul>
+              <li>נפח הפניות נמוך מאוד.</li>
+              <li>אין רצון לבדוק תהליך מכירה קיים.</li>
+              <li>מחפשים ייעוץ משכנתאות, ייעוץ פיננסי או מערכת מלאה.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="faq">
+      <div class="container">
+        <div class="section-heading compact-heading">
+          <span class="section-tag">שאלות</span>
+          <h2>שאלות נפוצות</h2>
+        </div>
+        <div class="faq">
+          <details data-faq>
+            <summary>למי הבדיקה מתאימה?</summary>
+            <p>ליועצי משכנתאות שמקבלים לפחות 30 פניות חדשות בחודש ורוצים להבין האם חלק מהפניות נופלות בגלל חוסר מעקב או פולואפ מאוחר.</p>
+          </details>
+          <details data-faq>
+            <summary>מה מקבלים ב־14 יום?</summary>
+            <p>מיפוי קצר של מקורות הפניות, זיהוי נקודות נפילה, סיכום לידים, פתיחת משימות בסיסיות ותזכורות חזרה ללקוחות.</p>
+          </details>
+          <details data-faq>
+            <summary>האם Leadaro נותנת ייעוץ משכנתאות או ייעוץ פיננסי?</summary>
+            <p>לא. Leadaro עוסקת במעקב אחרי פניות ובבדיקת תהליך המכירה בלבד, ואינה מספקת ייעוץ משכנתאות או ייעוץ פיננסי.</p>
+          </details>
+          <details data-faq>
+            <summary>האם זו מערכת מלאה?</summary>
+            <p>לא. ההצעה הנוכחית היא בדיקת 14 יום והקמת תהליך מעקב בסיסי. מערכת רחבה יותר מתומחרת בנפרד לפי צורך.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="fit">
       <div class="container pricing-wrap">
         <div>
+          <span class="section-tag">יצירת קשר</span>
           <h2>בדיקת התאמה קצרה</h2>
           <p class="section-lead">השארת פרטים מיועדת רק לבדיקת התאמה והמשך שיחה על Leadaro. אין כאן ייעוץ משכנתאות או ייעוץ פיננסי.</p>
         </div>
@@ -244,30 +402,6 @@
             <p class="form-status" data-form-status aria-live="polite"></p>
           </div>
         </form>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="faq">
-      <div class="container">
-        <h2>שאלות נפוצות</h2>
-        <div class="faq">
-          <details data-faq>
-            <summary>למי הבדיקה מתאימה?</summary>
-            <p>ליועצי משכנתאות שמקבלים לפחות 30 פניות חדשות בחודש ורוצים להבין האם חלק מהפניות נופלות בגלל חוסר מעקב או פולואפ מאוחר.</p>
-          </details>
-          <details data-faq>
-            <summary>מה מקבלים ב־14 יום?</summary>
-            <p>מיפוי קצר של מקורות הפניות, זיהוי נקודות נפילה, סיכום לידים, פתיחת משימות בסיסיות ותזכורות חזרה ללקוחות.</p>
-          </details>
-          <details data-faq>
-            <summary>האם Leadaro נותנת ייעוץ משכנתאות או ייעוץ פיננסי?</summary>
-            <p>לא. Leadaro עוסקת במעקב אחרי פניות ובבדיקת תהליך המכירה בלבד, ואינה מספקת ייעוץ משכנתאות או ייעוץ פיננסי.</p>
-          </details>
-          <details data-faq>
-            <summary>האם זו מערכת מלאה?</summary>
-            <p>לא. ההצעה הנוכחית היא בדיקת 14 יום והקמת תהליך מעקב בסיסי. מערכת רחבה יותר מתומחרת בנפרד לפי צורך.</p>
-          </details>
-        </div>
       </div>
     </section>
   </main>
