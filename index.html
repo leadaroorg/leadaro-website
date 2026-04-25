@@ -22,21 +22,20 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
   <style>
     :root{
-      --paper-50:#F7F2E7; --paper-100:#EFE8D6; --paper-200:#E3D9BF; --paper-300:#CDBF9D;
-      --ink-900:#11201E; --ink-700:#243634; --ink-500:#4F5E5B; --ink-400:#74807D; --ink-300:#9AA3A0;
-      --teal-900:#0A3631; --teal-700:#144A43; --teal-500:#246B62; --teal-100:#D1E1DD;
-      --amber-700:#8C6212; --amber-500:#B5862A; --amber-200:#EAD7A1; --amber-100:#F4E8C4;
-      --status-cold:#8C2A2A; --status-warm:#8C6212; --status-ok:#2E6B4A;
-      --paper-ink-fg:#F0E9D7;
+      --ink-900:#0E1B1A; --ink-700:#1F2E2C; --ink-500:#4A5856; --ink-400:#6B7775;
+      --sand-50:#FAF7F1; --sand-100:#F4EFE4; --sand-200:#E9E1CF; --sand-300:#D8CDB3;
+      --teal-900:#0B3B36; --teal-700:#155049; --teal-500:#2A736A; --teal-100:#D6E4E1;
+      --gold-600:#A6802B; --gold-400:#C9A24A; --gold-100:#F1E6C8;
+      --risk-red:#8E2A2A; --ok-green:#2E6B4A;
       --ff-display:"Frank Ruhl Libre","Heebo",serif;
       --ff-sans:"Heebo",system-ui,sans-serif;
       --ff-latin:"Inter",system-ui,sans-serif;
       --ff-mono:"JetBrains Mono",ui-monospace,monospace;
-      --r-doc:4px; --r-btn:6px; --r-pill:6px;
-      --container:1180px; --doc-prose:720px; --doc-wide:1080px;
-      --margin-col:80px; --gutter-doc:40px;
+      --shadow-soft:0 1px 2px rgba(14,27,26,.04),0 8px 24px rgba(14,27,26,.06);
+      --shadow-lift:0 2px 4px rgba(14,27,26,.05),0 18px 40px rgba(14,27,26,.10);
+      --container:1200px; --gutter:32px;
     }
-    body{background:var(--paper-50);color:var(--ink-900);font-family:var(--ff-sans);}
+    body{background:var(--sand-50);color:var(--ink-900);font-family:var(--ff-sans);}
   </style>
   <link rel="stylesheet" href="/styles.css">
   <script type="application/ld+json">
@@ -104,436 +103,319 @@
   <a class="skip-link" href="#contact">דלג לטופס</a>
 
   <header class="site-header" data-header>
-    <div class="header-inner">
-      <a class="brand" href="/" aria-label="Leadaro"><bdi>Leadaro</bdi></a>
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="Leadaro">
+        <span>Leadaro</span>
+      </a>
       <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
         <span class="visually-hidden">פתיחת תפריט</span>
       </button>
       <nav class="nav-links" id="primary-nav" data-nav aria-label="ניווט ראשי">
+        <a href="#problem">הבעיה</a>
         <a href="#how">איך זה עובד</a>
         <a href="#pricing">מחיר</a>
-        <a href="#report">דוח</a>
-        <a href="#contact">יצירת קשר</a>
+        <a href="#faq">שאלות</a>
       </nav>
-      <a class="btn btn--primary btn--small" href="#contact" data-primary-cta data-location="nav">בדיקת התאמה <span class="arrow" aria-hidden="true">←</span></a>
+      <a class="header-cta" href="#contact" data-primary-cta data-location="nav">בדיקת התאמה</a>
     </div>
   </header>
 
-  <main class="document">
-    <section id="hero" class="section section--doc" data-section="01">
-      <aside class="margin-col">
-        <span class="sec-num">01</span>
-        <span class="margin-rule"></span>
-        <span class="ref-id">ref: <bdi>A-0427</bdi></span>
-        <p>״כל שורה בדוח הזה היא ליד שיועץ אמיתי כמעט איבד.״</p>
-      </aside>
-      <div class="doc-body">
-        <p class="eyebrow">בדיקת <bdi>14</bdi> יום · יועצי משכנתאות · <bdi>30+</bdi> פניות בחודש</p>
-        <h1>כמה לידים חוזרים אליך בלי פולואפ סדור?</h1>
-        <p class="hero-subtitle"><bdi>Leadaro</bdi> בודקת איפה פניות חדשות נופלות בתהליך המכירה, ומקימה תהליך מעקב בסיסי שמסכם לידים, פותח משימות ומזכיר לחזור ללקוחות.</p>
-        <div class="cta-row">
-          <a class="btn btn--primary" href="#contact" data-primary-cta data-location="hero">בדיקת התאמה ב־<bdi>₪990</bdi> <span class="arrow" aria-hidden="true">←</span></a>
-          <a class="btn btn--secondary" href="#" data-whatsapp-link data-location="hero">דבר איתי בוואטסאפ</a>
-        </div>
-
-        <div class="audit-panel" aria-label="תמצית דוח בדיקת Leadaro">
-          <p class="visually-hidden">תמצית דוח בדיקה: ארבעים ושבע פניות נבדקו, שש בסיכון ושלושה כשלים בתהליך.</p>
-          <div class="audit-visual" aria-hidden="true">
-            <div class="audit-meta"><span><bdi>LEADARO</bdi></span><span>בדיקה: <bdi>A-0427</bdi></span><span>יום <bdi>9 / 14</bdi></span><span>הופק <bdi>25.04.26 14:02</bdi></span></div>
-            <div class="kpi-row">
-              <div><bdi>47</bdi><span>פניות נבדקו</span></div>
-              <div><bdi>6</bdi><span>בסיכון</span></div>
-              <div><bdi>3</bdi><span>כשלים בתהליך</span></div>
-            </div>
-            <div class="audit-rule"></div>
-            <div class="lead-row">
-              <span>ליד <bdi>#12</bdi></span><span class="source-dot">וואטסאפ</span><span>סטטוס: לא נפתח פולואפ</span><span class="mono"><bdi>48</bdi> שעות</span><span class="risk risk--high">גבוה</span>
-            </div>
-            <div class="lead-row">
-              <span>ליד <bdi>#18</bdi></span><span>פייסבוק</span><span>סטטוס: ממתין למסמכים</span><span class="mono"><bdi>72</bdi> שעות</span><span class="risk risk--medium">בינוני</span>
-            </div>
-            <div class="lead-row lead-row--more" data-audit-more>
-              <span>ליד <bdi>#23</bdi></span><span>המלצה</span><span>סטטוס: שיחה ראשונה בוצעה · הבא: תזכורת למסמכים</span><span></span><span class="risk risk--low">נמוך</span>
-            </div>
-            <div class="audit-footer" data-audit-more>דוח חלקי · עמוד <bdi>1</bdi> מתוך <bdi>9</bdi> · המשך בעמוד הבא <bdi>→</bdi></div>
+  <main>
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">בדיקת 14 יום · יועצי משכנתאות · 30+ פניות בחודש</p>
+          <h1>כמה לידים חוזרים אליך בלי פולואפ סדור?</h1>
+          <p class="hero-subtitle">Leadaro בודקת איפה פניות חדשות נופלות בתהליך המכירה, ומקימה תהליך מעקב בסיסי שמסכם לידים, פותח משימות ומזכיר לחזור ללקוחות.</p>
+          <div class="cta-row">
+            <a class="button button-primary" href="#contact" data-primary-cta data-location="hero">בדיקת התאמה ב־₪990</a>
+            <a class="button button-secondary" href="#" data-whatsapp-link data-location="hero">דבר איתי בוואטסאפ</a>
           </div>
-          <button class="audit-toggle" type="button" data-audit-toggle aria-expanded="false">הצג עוד</button>
+          <div class="trust-strip" aria-label="מאפייני הבדיקה">
+            <span>מקור לידים אחד</span>
+            <span>14 יום</span>
+            <span>בלי CRM חדש</span>
+            <span>בלי התחייבות ארוכה</span>
+            <span>דוח ברור בסוף הבדיקה</span>
+          </div>
+          <p class="roi-line"><span>עסקה אחת</span> שהתאוששה מליד שלא טופל בזמן יכולה לכסות את עלות הבדיקה כמה פעמים.</p>
         </div>
 
-        <p class="trust-strip">מקור לידים אחד · <bdi>14</bdi> יום · בלי <bdi>CRM</bdi> חדש · בלי התחייבות ארוכה · דוח ברור בסוף הבדיקה</p>
-        <p class="roi-line"><span>עסקה אחת</span> שהתאוששה מליד שלא טופל בזמן יכולה לכסות את עלות הבדיקה כמה פעמים.</p>
+        <div class="control-room" aria-hidden="true">
+          <article class="room-card lead-card">
+            <div class="card-top">
+              <span class="live-dot"></span>
+              <strong>כרטיס ליד נכנס</strong>
+              <span class="source-chip">וואטסאפ</span>
+            </div>
+            <div class="lead-identity">
+              <span class="avatar"></span>
+              <div>
+                <strong>דניאל לוי</strong>
+                <span class="mono">היום · 14:32</span>
+              </div>
+              <span class="status-pill">חדש</span>
+            </div>
+            <p>מתעניין במחזור משכנתא, ביקש חזרה אחרי בדיקת מסמכים.</p>
+          </article>
+
+          <article class="room-card summary-card">
+            <div class="card-top">
+              <strong>סיכום פנימי + ציר זמן</strong>
+              <span class="mono">48 שעות ללא מענה</span>
+            </div>
+            <ul class="ai-list">
+              <li>לקוח ביקש בדיקה ראשונית.</li>
+              <li>חסרים מסמכים להמשך.</li>
+              <li>לא נפתחה משימת חזרה.</li>
+              <li>הפנייה בסיכון בגלל עיכוב.</li>
+            </ul>
+            <div class="timeline-mini" aria-hidden="true">
+              <span>נכנס</span><span>נצפה</span><span>סוכם</span><span>משימה נפתחה</span>
+            </div>
+            <div class="risk-bar" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          </article>
+
+          <article class="room-card report-card">
+            <div class="card-top">
+              <strong>דוח 14 יום — תצוגה מקדימה</strong>
+              <span class="mono">יום 9 / 14</span>
+            </div>
+            <div class="stat-grid">
+              <div><span>לידים שנכנסו</span><strong>47</strong></div>
+              <div><span>זוהו כנפלו</span><strong>6</strong></div>
+              <div><span>נקודות תקלה</span><strong>3</strong></div>
+            </div>
+            <div class="mini-chart" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </article>
+        </div>
+        <p class="visually-hidden">תצוגת דוגמה של שכבת מעקב: כרטיס ליד נכנס, סיכום פנימי, ציר זמן, משימת פולואפ ודוח 14 יום.</p>
       </div>
     </section>
 
-    <section id="problem" class="section section--doc" data-section="02">
-      <aside class="margin-col">
-        <span class="sec-num">02</span>
-        <span class="ref-id">flow map</span>
-        <p>הפער לא מתחיל בכמות הלידים. הוא מתחיל בזה שאין להם מקום אחד ברור.</p>
-      </aside>
-      <div class="doc-body">
-        <h2>איפה הלידים נופלים בדרך</h2>
-        <p class="mobile-note">הפער לא מתחיל בכמות הלידים. הוא מתחיל בזה שאין להם מקום אחד ברור.</p>
-        <div class="prose">
+    <section class="section problem" id="problem">
+      <div class="container problem-grid">
+        <div class="section-copy">
+          <p class="section-kicker">הבעיה</p>
+          <h2>איפה הלידים נופלים בדרך</h2>
           <p>המטרה היא לא להחליף את שיטת העבודה שלך, אלא לזהות איפה פניות חדשות מאבדות מומנטום ולהקים שכבת מעקב בסיסית שמחזירה סדר לתהליך.</p>
-          <p>בבדיקה קצרה רואים איפה הליד נכנס, מה קרה איתו בפועל, והאם נפתחה פעולה ברורה שמחזירה אותו למסלול.</p>
         </div>
-        <figure class="lead-flow">
-          <svg class="flow-desktop" viewBox="0 0 1080 320" role="img" aria-labelledby="flow-title">
-            <title id="flow-title">מפת זרימת לידים ממקורות שונים אל שכבת הבדיקה של Leadaro</title>
-            <text class="map-title" x="24" y="30">LEAD FLOW MAP · v1</text>
-            <g class="sources">
-              <rect x="870" y="42" width="120" height="28" rx="6"></rect><text x="930" y="61">וואטסאפ</text>
-              <rect x="870" y="94" width="120" height="28" rx="6"></rect><text x="930" y="113">פייסבוק</text>
-              <rect x="870" y="146" width="120" height="28" rx="6"></rect><text x="930" y="165">אתר</text>
-              <rect x="870" y="198" width="120" height="28" rx="6"></rect><text x="930" y="217">המלצות</text>
-              <rect x="870" y="250" width="120" height="28" rx="6"></rect><text x="930" y="269">טלפון</text>
+        <figure class="funnel-map" aria-label="מפת מקורות פנייה לשכבת מעקב">
+          <svg viewBox="0 0 720 420" role="img" aria-labelledby="problem-title">
+            <title id="problem-title">מקורות פנייה מתחברים לשכבת מעקב עם שלוש שורות לידים</title>
+            <g class="channel-chips">
+              <rect x="486" y="32" width="160" height="42" rx="21"></rect><text x="566" y="59">וואטסאפ</text>
+              <rect x="506" y="104" width="140" height="42" rx="21"></rect><text x="576" y="131">פייסבוק</text>
+              <rect x="522" y="176" width="124" height="42" rx="21"></rect><text x="584" y="203">אתר</text>
+              <rect x="494" y="248" width="152" height="42" rx="21"></rect><text x="570" y="275">המלצות</text>
+              <rect x="520" y="320" width="126" height="42" rx="21"></rect><text x="583" y="347">טלפון</text>
             </g>
-            <g class="map-lines dashed">
-              <path d="M870 56 C760 58 720 94 654 132"></path>
-              <path d="M870 108 C758 112 720 128 654 146"></path>
-              <path d="M870 160 C760 160 720 160 654 160"></path>
-              <path d="M870 212 C758 208 720 190 654 174"></path>
-              <path d="M870 264 C760 258 720 220 654 188"></path>
+            <g class="flow-lines">
+              <path d="M486 53 C410 54 390 120 330 164"></path>
+              <path d="M506 125 C430 132 390 152 330 178"></path>
+              <path d="M522 197 C438 198 391 198 330 198"></path>
+              <path d="M494 269 C418 260 384 238 330 216"></path>
+              <path d="M520 341 C412 332 374 268 330 232"></path>
+              <path class="solid" d="M330 198 C292 198 275 198 242 198"></path>
             </g>
-            <text class="risk-tag" x="762" y="48">◂ סיכון</text>
-            <g class="scatter">
-              <rect x="502" y="84" width="152" height="152" rx="4"></rect>
-              <text x="578" y="114">פניות מפוזרות</text>
-              <line x1="526" x2="630" y1="136" y2="136"></line>
-              <line x1="526" x2="630" y1="156" y2="156"></line>
-              <line x1="526" x2="630" y1="176" y2="176"></line>
-              <line x1="526" x2="630" y1="196" y2="196"></line>
-              <line x1="526" x2="630" y1="216" y2="216"></line>
-            </g>
-            <g class="audit-layer">
-              <rect x="264" y="72" width="174" height="176" rx="4"></rect>
-              <text x="351" y="104">LEADARO AUDIT LAYER</text>
-            </g>
-            <g class="map-lines solid">
-              <path d="M502 160 C470 160 464 160 438 160"></path>
-              <path d="M264 160 C236 160 226 96 194 78"></path>
-              <path d="M264 160 C236 160 226 138 194 132"></path>
-              <path d="M264 160 C236 160 226 192 194 202"></path>
-              <path d="M264 160 C236 160 226 240 194 254"></path>
-            </g>
-            <g class="outputs">
-              <rect x="54" y="56" width="140" height="32" rx="6"></rect><text x="124" y="77">STATUS</text>
-              <rect x="54" y="116" width="140" height="32" rx="6"></rect><text x="124" y="137">TASK</text>
-              <rect x="54" y="186" width="140" height="32" rx="6"></rect><text x="124" y="207">FOLLOW-UP</text>
-              <rect x="54" y="238" width="140" height="32" rx="6"></rect><text x="124" y="259">REPORT</text>
-            </g>
-          </svg>
-          <svg class="flow-mobile" viewBox="0 0 360 600" role="img" aria-labelledby="flow-mobile-title">
-            <title id="flow-mobile-title">מפת זרימת לידים ממקורות שונים אל שכבת הבדיקה של Leadaro</title>
-            <text class="map-title" x="18" y="28">LEAD FLOW MAP · v1</text>
-            <g class="sources">
-              <rect x="230" y="48" width="100" height="28" rx="6"></rect><text x="280" y="67">וואטסאפ</text>
-              <rect x="120" y="48" width="92" height="28" rx="6"></rect><text x="166" y="67">פייסבוק</text>
-              <rect x="30" y="48" width="72" height="28" rx="6"></rect><text x="66" y="67">אתר</text>
-              <rect x="188" y="96" width="100" height="28" rx="6"></rect><text x="238" y="115">המלצות</text>
-              <rect x="74" y="96" width="92" height="28" rx="6"></rect><text x="120" y="115">טלפון</text>
-            </g>
-            <g class="map-lines dashed">
-              <path d="M280 76 C254 138 226 168 198 218"></path>
-              <path d="M166 76 C168 132 174 166 184 218"></path>
-              <path d="M66 76 C96 140 132 170 170 218"></path>
-              <path d="M238 124 C224 158 206 186 194 218"></path>
-              <path d="M120 124 C140 160 160 188 176 218"></path>
-            </g>
-            <text class="risk-tag" x="224" y="158">◂ סיכון</text>
-            <g class="scatter">
-              <rect x="92" y="218" width="176" height="112" rx="4"></rect>
-              <text x="180" y="248">פניות מפוזרות</text>
-              <line x1="122" x2="238" y1="268" y2="268"></line>
-              <line x1="122" x2="238" y1="286" y2="286"></line>
-              <line x1="122" x2="238" y1="304" y2="304"></line>
-            </g>
-            <g class="audit-layer">
-              <rect x="86" y="368" width="188" height="100" rx="4"></rect>
-              <text x="110" y="404">LEADARO AUDIT LAYER</text>
-            </g>
-            <g class="map-lines solid">
-              <path d="M180 330 V368"></path>
-              <path d="M180 468 V502"></path>
-            </g>
-            <g class="outputs">
-              <rect x="190" y="510" width="120" height="32" rx="6"></rect><text x="250" y="531">STATUS</text>
-              <rect x="50" y="510" width="120" height="32" rx="6"></rect><text x="110" y="531">TASK</text>
-              <rect x="190" y="554" width="120" height="32" rx="6"></rect><text x="250" y="575">FOLLOW-UP</text>
-              <rect x="50" y="554" width="120" height="32" rx="6"></rect><text x="110" y="575">REPORT</text>
+            <g class="tracking-box">
+              <rect x="40" y="98" width="202" height="210" rx="18"></rect>
+              <text class="box-title" x="141" y="132">שכבת מעקב</text>
+              <rect class="lead-row-svg" x="64" y="154" width="154" height="34" rx="8"></rect>
+              <rect class="lead-row-svg" x="64" y="202" width="154" height="34" rx="8"></rect>
+              <rect class="lead-row-svg" x="64" y="250" width="154" height="34" rx="8"></rect>
             </g>
           </svg>
         </figure>
-        <div class="failure-table">
-          <div><strong>אין סטטוס אחיד</strong><span>הליד מתעופף בין ערוצים, אף אחד לא יודע איפה הוא עומד</span></div>
-          <div><strong>אין תאריך חזרה</strong><span>אין הגדרה ברורה מתי לחזור — וזה נופל</span></div>
-          <div><strong>אין פולואפ ברור</strong><span>הודעה אחת נשלחת, ואז שקט של שבועיים</span></div>
-          <div><strong>אין דוח שבועי</strong><span>אין מבט-על — אז אי אפשר לתקן</span></div>
+      </div>
+    </section>
+
+    <section class="section how" id="how">
+      <div class="container">
+        <div class="section-copy narrow">
+          <p class="section-kicker">מהלך הבדיקה</p>
+          <h2>איך נראים 14 הימים</h2>
+        </div>
+        <div class="how-timeline">
+          <article><span>01</span><h3>מיפוי</h3><p>מבינים כמה פניות נכנסות, מאיפה הן מגיעות, ואיך מתנהל המעקב אחרי פנייה חדשה.</p></article>
+          <article><span>02</span><h3>מקור אחד</h3><p>מתחילים ממקור לידים אחד כדי לבדוק תהליך אמיתי בלי להעמיס מערכת חדשה.</p></article>
+          <article><span>03</span><h3>מעקב וסיכום AI</h3><p>מסכמים לידים, פותחים משימות ומגדירים תזכורות חזרה בצורה בסיסית וברורה.</p></article>
+          <article><span>04</span><h3>דוח 14 יום</h3><p>מקבלים תמונה קצרה: אילו לידים נפלו ואילו נקודות בתהליך איבדו שליטה.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="how" class="section section--doc" data-section="03">
-      <aside class="margin-col">
-        <span class="sec-num">03</span>
-        <span class="ref-id">method</span>
-      </aside>
-      <div class="doc-body">
-        <h2>מתודולוגיה</h2>
-        <div class="method-timeline">
-          <article><span>01</span><h3>מיפוי</h3><p>שיחת בסיס + מיפוי ערוצי הפניות הקיימים</p></article>
-          <article><span>02</span><h3>מקור לידים אחד</h3><p>כל פנייה חדשה זורמת לשכבת מעקב אחת</p></article>
-          <article><span>03</span><h3>מעקב וסיכום פנימי</h3><p>סיכום <bdi>AI</bdi> פנימי לכל ליד, ללא מענה אוטומטי ללקוח</p></article>
-          <article><span>04</span><h3>זיהוי פערים</h3><p>מסמנים לידים שלא טופלו בזמן ונקודות תקלה חוזרות</p></article>
-          <article><span>05</span><h3>דוח <bdi>14</bdi> יום</h3><p>דוח כתוב המסכם מה נכנס, מה נפל, ומה לתקן</p></article>
+    <section class="section whatsapp" id="whatsapp">
+      <div class="container whatsapp-grid">
+        <div class="section-copy">
+          <p class="section-kicker">וואטסאפ</p>
+          <h2>וואטסאפ — מתחילים בטוח, לא בהבטחות.</h2>
+          <p><span></span>Leadaro מתמקדת במעבר בין שיחה פתוחה לבין סיכום פנימי, סטטוס ומשימת חזרה.</p>
+          <p><span></span>וואטסאפ נשאר מקור הפנייה; המעקב הופך ברור יותר.</p>
+          <p><span></span>אין כאן בוט שמדבר עם לקוחות ואין שליחה אוטומטית בלי הסכמה נפרדת.</p>
         </div>
-        <div class="map-mini" aria-hidden="true">
-          <svg viewBox="0 0 200 84">
-            <path d="M182 18 C138 22 132 42 100 42 M182 42 H100 M182 66 C138 62 132 42 100 42"></path>
-            <rect x="74" y="20" width="42" height="44" rx="4"></rect>
-            <path d="M74 42 H34"></path>
-            <rect x="10" y="30" width="48" height="24" rx="4"></rect>
-          </svg>
-          <p>→ ראה: <bdi>Lead Flow Map</bdi> · §02</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="whatsapp" class="section section--doc" data-section="04">
-      <aside class="margin-col">
-        <span class="sec-num">04</span>
-        <span class="ref-id">WA</span>
-      </aside>
-      <div class="doc-body">
-        <h2>מתחילים בטוח, לא בהבטחות.</h2>
-        <div class="whatsapp-layout">
-          <div class="stage-list">
-            <p><span>[שלב 1]</span> <bdi>Forward</bdi> ידני — היועץ מעביר לידים שמגיעים בוואטסאפ אל שכבת המעקב.</p>
-            <p><span>[שלב 2]</span> <bdi>Labels</bdi> ב־<bdi>WhatsApp Business</bdi> — סימון מצב של כל שיחה, ללא כלים חיצוניים.</p>
-            <p><span>[שלב 3]</span> <bdi>API</bdi> רשמי — רק אם יש הצדקה עסקית להמשך מעבר ל־<bdi>14</bdi> יום.</p>
-          </div>
-          <article class="wa-transcript" aria-label="תיעוד וואטסאפ פנימי">
-            <p class="bubble">היי, אשמח לבדוק אפשרות למחזור משכנתא.</p>
-            <p class="bubble note">[הערה פנימית — לא נשלחת ללקוח] לקוח ביקש חזרה אחרי איסוף מסמכים.</p>
-            <p class="task-tag">[משימה: לחזור עד <bdi>17:00</bdi>]</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing" class="section section--doc section--invert" data-section="05" data-pricing>
-      <aside class="margin-col">
-        <span class="sec-num">05</span>
-        <span class="ref-id">scope</span>
-      </aside>
-      <div class="doc-body">
-        <h2>היקף הבדיקה</h2>
-        <article class="pricing-card">
-          <p class="doc-meta"><bdi>SCOPE OF WORK</bdi> · בדיקת <bdi>LEADARO</bdi> · <bdi>A-PILOT</bdi></p>
-          <div class="price-title">
-            <h3>בדיקת <bdi>Leadaro</bdi> · <bdi>14</bdi> יום · מקור לידים אחד</h3>
-            <strong><bdi>₪990</bdi></strong>
-          </div>
-          <div class="thin-rule"></div>
-          <p class="include-title">כלול בבדיקה:</p>
-          <ul class="include-list">
-            <li>מיפוי תהליך</li>
-            <li>מעקב בסיסי</li>
-            <li>סיכום <bdi>AI</bdi> פנימי</li>
-            <li>זיהוי פניות שנפלו</li>
-            <li>דוח מסכם</li>
-          </ul>
-          <p class="guarantee">אחריות: אם בתום <bdi>14</bdi> יום לא זוהו לפחות <bdi>2</bdi> לידים שנפלו או <bdi>3</bdi> נקודות ברורות שבהן התהליך מאבד שליטה — מקבלים החזר מלא.</p>
-          <a class="btn btn--primary btn--wide" href="#contact" data-primary-cta data-location="pricing">בדיקת התאמה ב־<bdi>₪990</bdi> <span class="arrow" aria-hidden="true">←</span></a>
-          <a class="tertiary-link" href="#" data-whatsapp-link data-location="pricing">דבר איתי בוואטסאפ</a>
-          <p class="signed">── חתום: <bdi>Leadaro</bdi> · <bdi>25.04.26</bdi> ──</p>
+        <article class="wa-card" aria-label="דוגמה למעקב פנימי מפנייה בוואטסאפ">
+          <div class="wa-bubble incoming">היי, אשמח לבדוק אפשרות למחזור משכנתא.</div>
+          <div class="wa-bubble internal"><strong>הערה פנימית — לא נשלחת ללקוח</strong><br>לקוח ביקש חזרה אחרי איסוף מסמכים.</div>
+          <div class="task-chip">משימה: לחזור עד 17:00</div>
         </article>
       </div>
     </section>
 
-    <section id="example" class="section section--doc" data-section="06">
-      <aside class="margin-col">
-        <span class="sec-num">06</span>
-        <span class="ref-id">record</span>
-      </aside>
-      <div class="doc-body">
-        <p class="doc-meta"><bdi>WORK RECORD</bdi> · <bdi>A-0427</bdi> · <bdi>LEAD #12</bdi></p>
-        <h2>רשומת עבודה — לפני / אחרי</h2>
-        <div class="record-grid">
-          <article class="before">
-            <p class="tag">[קלט גולמי · וואטסאפ · <bdi>14:32</bdi>]</p>
-            <div class="raw-message">
-              <p><strong>דניאל לוי</strong> <span><bdi>14:32</bdi></span></p>
-              <p>היי, אני בודק אפשרות למחזור משכנתא. יש לי הצעה מהבנק ורוצה להבין אם כדאי להתקדם. אפשר לדבר מחר?</p>
-            </div>
-          </article>
-          <article class="after">
-            <div><strong>[סיכום פנימי]</strong><p>לקוח מתעניין במחזור.<br>מחזיק הצעה קיימת מהבנק.<br>מבקש שיחת המשך מחר.</p></div>
-            <div><strong>[סטטוס]</strong><span class="status-pill">ממתין למסמכים</span></div>
-            <div><strong>[משימה]</strong><p>לחזור עד מחר <bdi>11:00</bdi> <span class="due">due</span></p></div>
-            <div><strong>[טיוטת פולואפ]</strong><p>היי דניאל, קיבלתי. נחזור מחר ונעבור יחד על ההצעה.<br>אפשר לשלוח לי בינתיים את המסמכים?</p><span class="caption">טיוטה — דורשת אישור לפני שליחה</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="report" class="section section--doc section--invert" data-section="07">
-      <aside class="margin-col">
-        <span class="sec-num">07</span>
-        <span class="ref-id">report</span>
-        <p>״לא קונים <bdi>AI</bdi>. קונים בהירות לגבי תהליך הלידים שלך.״</p>
-      </aside>
-      <div class="doc-body">
-        <h2>מה מקבלים ביום ה־<bdi>14</bdi></h2>
-        <div class="report-panel" aria-label="תצוגה מקדימה של דוח מסכם ליום 14">
-          <p class="visually-hidden">דוח מסכם עם מספר הפניות שנבדקו, פניות שלא קיבלו פולואפ בזמן, מקור איבוד מרכזי והמלצה מרכזית.</p>
-          <div class="report-visual" aria-hidden="true">
-            <p class="doc-meta"><bdi>LEADARO</bdi> · סיכום בדיקה · <bdi>A-0427</bdi> · <bdi>09.05.26</bdi></p>
-            <h3>סיכום בדיקה — <bdi>14</bdi> יום</h3>
-            <div class="report-kpis">
-              <p><span>פניות שנבדקו ...........</span><bdi>47</bdi></p>
-              <p><span>פניות שלא קיבלו פולואפ בזמן ....</span><bdi>6</bdi> <em>◂</em></p>
-              <p><span>פניות שחיכו למסמכים ללא תזכורת ...</span><bdi>4</bdi> <em>◂</em></p>
-            </div>
-            <div class="thin-rule"></div>
-            <p class="source-kpi"><span>מקור עם הכי הרבה איבוד ............</span><strong>וואטסאפ</strong></p>
-            <div class="thin-rule"></div>
-            <div class="recommendation">
-              <span>המלצה מרכזית:</span>
-              <p>להגדיר משימת חזרה אחרי <bdi>24</bdi> שעות.</p>
-            </div>
-            <div class="thin-rule"></div>
-            <p class="signed">חתום: <bdi>Leadaro</bdi> · יועץ: [שם הלקוח]</p>
+    <section class="section pricing" id="pricing" data-pricing>
+      <div class="container">
+        <article class="pricing-card">
+          <p class="floating-chip">הצעה אחת. מחיר אחד. תוצאה אחת.</p>
+          <h3>בדיקת Leadaro</h3>
+          <div class="price-block">
+            <span class="currency">₪</span><strong>990</strong><span class="price-divider"></span><span>14 יום</span>
           </div>
-        </div>
-        <p class="panel-caption">״לא קונים <bdi>AI</bdi>. קונים בהירות לגבי תהליך הלידים שלך.״</p>
+          <ul class="includes">
+            <li>מיפוי מקור לידים אחד</li>
+            <li>זיהוי לידים שנפלו או כמעט נפלו</li>
+            <li>הקמת תהליך מעקב בסיסי</li>
+            <li>סיכום לידים, משימות ותזכורות</li>
+            <li>דוח ברור בסוף הבדיקה</li>
+          </ul>
+          <p class="guarantee">אם בתום 14 יום לא זוהו לפחות 2 לידים שנפלו או 3 נקודות ברורות שבהן התהליך מאבד שליטה — מקבלים החזר מלא.</p>
+          <a class="button button-primary full" href="#contact" data-primary-cta data-location="pricing">בדיקת התאמה ב־₪990</a>
+          <a class="sub-link" href="#" data-whatsapp-link data-location="pricing">דבר איתי בוואטסאפ</a>
+        </article>
       </div>
     </section>
 
-    <section id="fit" class="section section--doc" data-section="08">
-      <aside class="margin-col">
-        <span class="sec-num">08</span>
-        <span class="ref-id">fit</span>
-      </aside>
-      <div class="doc-body">
-        <h2>התאמה</h2>
-        <div class="fit-grid">
-          <article>
-            <h3>מתאים אם</h3>
-            <div class="fit-item"><span>+</span><div><strong>נכנסות לפחות <bdi>30</bdi> פניות חדשות בחודש.</strong><p>יש מספיק נפח כדי לזהות דפוסים אמיתיים.</p></div></div>
-            <div class="fit-item"><span>+</span><div><strong>יש מקור לידים קבוע.</strong><p>אפשר להתחיל ממקור אחד ולמדוד אותו כמו שצריך.</p></div></div>
-            <div class="fit-item"><span>+</span><div><strong>יש תחושה שחלק מהלידים לא חוזרים בזמן.</strong><p>הבדיקה בודקת אם התחושה מגובה בפועל.</p></div></div>
-            <div class="fit-item"><span>+</span><div><strong>רוצים דוח קצר ולא מערכת גדולה.</strong><p>המטרה היא בהירות ותהליך בסיסי, לא החלפת כל העסק.</p></div></div>
-          </article>
-          <article>
-            <h3>לא מתאים אם</h3>
-            <div class="fit-item quiet"><span>−</span><div><strong>נפח הפניות נמוך מאוד.</strong><p>קשה לזהות כשלים אמינים בלי מספיק פניות.</p></div></div>
-            <div class="fit-item quiet"><span>−</span><div><strong>מחפשים ייעוץ משכנתאות.</strong><p><bdi>Leadaro</bdi> לא נותנת ייעוץ מקצועי או פיננסי.</p></div></div>
-            <div class="fit-item quiet"><span>−</span><div><strong>רוצים החלפת <bdi>CRM</bdi>.</strong><p>הבדיקה היא שכבת מעקב בסיסית, לא מערכת מלאה.</p></div></div>
-            <div class="fit-item quiet"><span>−</span><div><strong>לא רוצים לבדוק תהליך קיים.</strong><p>הערך מגיע מהסתכלות כנה על מה שקורה היום.</p></div></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" class="section section--doc" data-section="09">
-      <aside class="margin-col">
-        <span class="sec-num">09</span>
-        <span class="ref-id">faq</span>
-      </aside>
-      <div class="doc-body">
-        <h2>שאלות</h2>
-        <div class="faq-list">
-          <details data-faq>
-            <summary>למי הבדיקה מתאימה?</summary>
-            <p>ליועצי משכנתאות שמקבלים לפחות <bdi>30</bdi> פניות חדשות בחודש ורוצים להבין האם חלק מהפניות נופלות בגלל חוסר מעקב או פולואפ מאוחר.</p>
-          </details>
-          <details data-faq>
-            <summary>מה מקבלים ב־<bdi>14</bdi> יום?</summary>
-            <p>מיפוי קצר של מקורות הפניות, זיהוי נקודות נפילה, סיכום לידים, פתיחת משימות בסיסיות ותזכורות חזרה ללקוחות.</p>
-          </details>
-          <details data-faq>
-            <summary>האם <bdi>Leadaro</bdi> נותנת ייעוץ משכנתאות או ייעוץ פיננסי?</summary>
-            <p>לא. <bdi>Leadaro</bdi> עוסקת במעקב אחרי פניות ובבדיקת תהליך המכירה בלבד, ואינה מספקת ייעוץ משכנתאות או ייעוץ פיננסי.</p>
-          </details>
-          <details data-faq>
-            <summary>האם זו מערכת מלאה?</summary>
-            <p>לא. ההצעה הנוכחית היא בדיקת <bdi>14</bdi> יום והקמת תהליך מעקב בסיסי. מערכת רחבה יותר מתומחרת בנפרד לפי צורך.</p>
-          </details>
+    <section class="section example" id="example">
+      <div class="container example-layout">
+        <article class="raw-lead">
+          <p class="section-kicker">ליד מקורי — וואטסאפ 14:32</p>
+          <div class="raw-card">היי, אני בודק אפשרות למחזור משכנתא. יש לי הצעה מהבנק ורוצה להבין אם כדאי להתקדם. אפשר לדבר מחר?</div>
+        </article>
+        <svg class="example-arrow" viewBox="0 0 160 48" aria-hidden="true">
+          <path d="M12 24 H132"></path><path d="M116 10 L134 24 L116 38"></path>
+        </svg>
+        <div class="lead-panels">
+          <article><h3>סיכום פנימי</h3><p>לקוח מתעניין במחזור, מחזיק הצעה קיימת ומבקש שיחת המשך מחר.</p></article>
+          <article><h3>מקור</h3><span class="source-chip">וואטסאפ</span></article>
+          <article><h3>משימה</h3><p>לחזור עד מחר <span class="due-badge">11:00</span></p></article>
+          <article><h3>טיוטת פולואפ</h3><p>היי דניאל, קיבלתי. נחזור מחר ונעבור יחד על ההצעה.</p><span class="mono">טיוטה — דורשת אישור לפני שליחה</span></article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section section--doc" data-section="10">
-      <aside class="margin-col">
-        <span class="sec-num">10</span>
-        <span class="ref-id">intake</span>
-      </aside>
-      <div class="doc-body">
-        <h2>בדיקת התאמה לפיילוט</h2>
-        <p class="contact-subtitle">נבדוק אם יש מספיק נפח פניות כדי שהבדיקה תהיה אמינה.</p>
-        <div class="contact-grid">
-          <div class="submit-steps">
-            <p><span>[01]</span> אני קורא את הפנייה אישית.</p>
-            <p><span>[02]</span> אם יש התאמה, אני שולח שאלון קצר.</p>
-            <p><span>[03]</span> שיחה קצרה (<bdi>15</bdi> דק').</p>
-            <p><span>[04]</span> התחלת הבדיקה ב־<bdi>₪990</bdi>.</p>
-          </div>
-          <form class="lead-form" data-lead-form data-success-url="/thank-you">
-            <label for="lead-name">שם מלא</label>
-            <input id="lead-name" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="form-helper">
-            <label for="lead-phone">טלפון</label>
-            <input id="lead-phone" name="phone" type="tel" autocomplete="tel" required aria-required="true" aria-describedby="form-helper">
-            <label for="lead-count">כמה פניות חדשות נכנסות בחודש?</label>
-            <select id="lead-count" name="monthly_leads" required aria-required="true" aria-describedby="form-helper">
-              <option value="" selected disabled>בחירה</option>
-              <option>30–60</option>
-              <option>60–100</option>
-              <option>100+</option>
-            </select>
-            <label for="lead-source">מאיפה מגיעות רוב הפניות?</label>
-            <select id="lead-source" name="main_source" required aria-required="true" aria-describedby="form-helper">
-              <option value="" selected disabled>בחירה</option>
-              <option>וואטסאפ</option>
-              <option>פייסבוק</option>
-              <option>אתר</option>
-              <option>המלצות</option>
-              <option>מעורב</option>
-            </select>
-            <label class="honeypot" for="website">אתר</label>
-            <input class="honeypot" id="website" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <button class="btn btn--primary btn--wide" type="submit">שלח בדיקת התאמה</button>
-            <p class="form-helper" id="form-helper">התשובה תוך יום עסקים · אין דיוור · אין שיחות מכירה</p>
-            <p class="form-status" data-form-status aria-live="polite"></p>
-          </form>
+    <section class="section fit" id="fit">
+      <div class="container fit-grid">
+        <article>
+          <h2>מתאים לך אם…</h2>
+          <ul class="fit-list good">
+            <li>נכנסות לפחות 30 פניות חדשות בחודש.</li>
+            <li>רוב הפניות מגיעות ממקור אחד או כמה מקורות קבועים.</li>
+            <li>יש תחושה שחלק מהלידים לא מקבלים חזרה בזמן.</li>
+          </ul>
+        </article>
+        <article>
+          <h2>לא מתאים אם…</h2>
+          <ul class="fit-list quiet">
+            <li>נפח הפניות נמוך מאוד.</li>
+            <li>אין רצון לבדוק תהליך מכירה קיים.</li>
+            <li>מחפשים ייעוץ משכנתאות, ייעוץ פיננסי או מערכת מלאה.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container">
+        <div class="section-copy narrow">
+          <p class="section-kicker">שאלות</p>
+          <h2>שאלות נפוצות</h2>
         </div>
+        <details data-faq>
+          <summary>למי הבדיקה מתאימה?</summary>
+          <p>ליועצי משכנתאות שמקבלים לפחות 30 פניות חדשות בחודש ורוצים להבין האם חלק מהפניות נופלות בגלל חוסר מעקב או פולואפ מאוחר.</p>
+        </details>
+        <details data-faq>
+          <summary>מה מקבלים ב־14 יום?</summary>
+          <p>מיפוי קצר של מקורות הפניות, זיהוי נקודות נפילה, סיכום לידים, פתיחת משימות בסיסיות ותזכורות חזרה ללקוחות.</p>
+        </details>
+        <details data-faq>
+          <summary>האם Leadaro נותנת ייעוץ משכנתאות או ייעוץ פיננסי?</summary>
+          <p>לא. Leadaro עוסקת במעקב אחרי פניות ובבדיקת תהליך המכירה בלבד, ואינה מספקת ייעוץ משכנתאות או ייעוץ פיננסי.</p>
+        </details>
+        <details data-faq>
+          <summary>האם זו מערכת מלאה?</summary>
+          <p>לא. ההצעה הנוכחית היא בדיקת 14 יום והקמת תהליך מעקב בסיסי. מערכת רחבה יותר מתומחרת בנפרד לפי צורך.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="section-copy">
+          <p class="section-kicker">יצירת קשר</p>
+          <h2>בדיקת התאמה קצרה</h2>
+          <p>השארת פרטים מיועדת רק לבדיקת התאמה והמשך שיחה על Leadaro. אין כאן ייעוץ משכנתאות או ייעוץ פיננסי.</p>
+        </div>
+        <form class="lead-form" data-lead-form data-success-url="/thank-you">
+          <label for="lead-name">שם מלא</label>
+          <input id="lead-name" name="name" type="text" autocomplete="name" required aria-required="true" aria-describedby="name-help">
+          <span class="field-help" id="name-help">שם ליצירת קשר ראשוני.</span>
+
+          <label for="lead-phone">טלפון</label>
+          <input id="lead-phone" name="phone" type="tel" autocomplete="tel" required aria-required="true" aria-describedby="phone-help">
+          <span class="field-help" id="phone-help">מספר לחזרה לגבי בדיקת ההתאמה.</span>
+
+          <label for="lead-count">כמה פניות נכנסות בחודש?</label>
+          <select id="lead-count" name="monthly_leads" required aria-required="true" aria-describedby="count-help">
+            <option value="" selected disabled>בחירה</option>
+            <option>30–60</option>
+            <option>60–100</option>
+            <option>100+</option>
+          </select>
+          <span class="field-help" id="count-help">טווח משוער של פניות חדשות.</span>
+
+          <label for="lead-source">מאיפה מגיעות רוב הפניות?</label>
+          <select id="lead-source" name="main_source" required aria-required="true" aria-describedby="source-help">
+            <option value="" selected disabled>בחירה</option>
+            <option>וואטסאפ</option>
+            <option>פייסבוק</option>
+            <option>אתר</option>
+            <option>המלצות</option>
+            <option>מעורב</option>
+          </select>
+          <span class="field-help" id="source-help">מקור הלידים העיקרי כרגע.</span>
+
+          <label class="honeypot" for="website">אתר</label>
+          <input class="honeypot" id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+
+          <button class="button button-primary full" type="submit">בדיקת התאמה ב־₪990</button>
+          <p class="form-helper">התשובה תגיע תוך יום עסקים. אין דיוור, אין שיחות מכירה.</p>
+          <p class="form-status" data-form-status aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-grid">
-      <p><bdi>Leadaro</bdi> · בדיקת לידים · ת.ד. — ישראל</p>
-      <p><a href="/privacy">מדיניות פרטיות</a> · <a href="/terms">תקנון</a></p>
-      <p>© <bdi>2026</bdi> · <bdi>A-0427</bdi> · <bdi>ref build</bdi></p>
+    <div class="container footer-row">
+      <span>© Leadaro</span>
+      <nav aria-label="קישורים משפטיים">
+        <a href="/privacy">מדיניות פרטיות</a>
+        <a href="/terms">תנאי שימוש</a>
+      </nav>
     </div>
   </footer>
 
-  <aside class="cookie-banner" data-cookie-banner hidden>
+  <div class="cookie-banner" data-cookie-banner hidden>
     <button class="cookie-close" type="button" data-cookie-dismiss aria-label="סגירת הודעת עוגיות">×</button>
     <p>אנחנו משתמשים בכלי מדידה לא חיוניים רק לאחר הסכמה, כדי להבין איך האתר עובד ולשפר אותו.</p>
     <div class="cookie-actions">
-      <button class="btn btn--primary btn--small" type="button" data-cookie-accept>אישור</button>
+      <button class="button button-primary" type="button" data-cookie-accept>אישור</button>
       <a href="/privacy">מדיניות פרטיות</a>
     </div>
-  </aside>
+  </div>
 
   <a class="sticky-wa" href="#" data-sticky-wa data-whatsapp-link data-location="sticky_mobile" aria-label="פנייה בוואטסאפ">WA</a>
-  <div class="sticky-cta" data-sticky-cta>
-    <a class="btn btn--primary" href="#contact" data-primary-cta data-location="sticky_cta">בדיקת התאמה ב־<bdi>₪990</bdi> <span class="arrow" aria-hidden="true">←</span></a>
-  </div>
 
   <script src="/assets/js/config.js"></script>
   <script src="/main.js" defer></script>
