@@ -8,7 +8,8 @@
   const goodEndpoint = e => e && e !== "FORM_ENDPOINT" && !/^https?:\/\/example\.com/i.test(e);
   const real = k => cfg[k] && cfg[k] !== ph[k];
   const consent = () => localStorage.getItem(key) || "unset";
-  const wa = msg => "https://wa.me/" + (cfg.WHATSAPP_PHONE || "") + "?text=" + encodeURIComponent(msg || cfg.WHATSAPP_MESSAGE || "");
+  const phone = () => String(cfg.WHATSAPP_PHONE || "").replace(/\D/g, "");
+  const wa = msg => "https://wa.me/" + phone() + "?text=" + encodeURIComponent(msg || cfg.WHATSAPP_MESSAGE || "");
   const addScript = src => { const s = document.createElement("script"); s.async = true; s.src = src; document.head.appendChild(s); };
   function loadTracking() {
     if (trackingLoaded) return; trackingLoaded = true;
@@ -19,12 +20,13 @@
   }
   function wireWhatsApp() {
     $$("[data-whatsapp-link]").forEach(a => {
+      if (!phone()) { a.hidden = true; a.removeAttribute("href"); return; }
       a.href = wa(a.dataset.whatsappMessage);
       a.addEventListener("click", () => ev("whatsapp_click", { location: a.dataset.location || "page" }));
     });
   }
   function wireHeader() {
-    const h = $("[data-header]"), b = $("[data-menu-toggle]"), nav = $("[data-nav]"), stick = $("[data-sticky-wa]"), contact = $("#contact");
+    const h = $("[data-header]"), b = $("[data-menu-toggle]"), nav = $("[data-nav]"), stick = $("[data-sticky-wa]"), mobileCta = $("[data-sticky-cta]"), contact = $("#contact"), pricing = $("#pricing");
     b?.addEventListener("click", () => {
       const open = !nav.classList.contains("is-open");
       nav.classList.toggle("is-open", open); document.body.classList.toggle("menu-open", open); b.setAttribute("aria-expanded", open);
@@ -36,6 +38,7 @@
       h?.classList.toggle("is-sticky", stuck);
       h?.setAttribute("data-stuck", stuck ? "true" : "false");
       stick?.classList.toggle("is-visible", y > 600 && !(r && r.top < innerHeight && r.bottom > 0));
+      mobileCta?.classList.toggle("is-visible", pricing && y > pricing.offsetTop - innerHeight * .35 && !(r && r.top < innerHeight && r.bottom > 0));
     };
     syncHeader();
     addEventListener("scroll", syncHeader, { passive: true });
@@ -65,13 +68,12 @@
       if (!form.checkValidity()) { form.reportValidity(); return; }
       const values = Object.fromEntries(new FormData(form).entries());
       if (values.website) return;
-      ev("form_submit");
       const status = $("[data-form-status]", form), btn = $("button[type=submit]", form), endpoint = cfg.FORM_ENDPOINT || "", redirect = form.dataset.successUrl || "/thank-you";
       status.textContent = ""; btn.disabled = true;
       const namePhone = String(values.name_phone || "").trim(), source = values.main_lead_source || values.main_source || "";
       const phoneMatch = namePhone.match(/(?:\+?972|0)?5\d(?:[-\s]?\d){7}/);
-      const payload = { name: values.name || namePhone, phone: values.phone || (phoneMatch ? phoneMatch[0] : namePhone), name_phone: namePhone, business_field: values.business_field || "", monthly_leads: values.monthly_leads || "", main_source: source, main_lead_source: source, page_url: location.href, referrer: document.referrer || "", utm_source: qp("utm_source"), utm_medium: qp("utm_medium"), utm_campaign: qp("utm_campaign"), utm_content: qp("utm_content"), utm_term: qp("utm_term"), gclid: qp("gclid"), fbclid: qp("fbclid"), consent_status: consent(), created_at: new Date().toISOString(), timestamp: new Date().toISOString(), user_agent: navigator.userAgent || "" };
-      const done = () => { ev("lead_form_submit"); location.href = redirect; };
+      const payload = { name: values.name || namePhone, phone: values.phone || (phoneMatch ? phoneMatch[0] : namePhone), name_phone: namePhone, business_field: values.business_field || "", monthly_leads: values.monthly_leads || "", main_source: source, main_lead_source: source, page_url: location.href, page_path: location.pathname, referrer: document.referrer || "", utm_source: qp("utm_source"), utm_medium: qp("utm_medium"), utm_campaign: qp("utm_campaign"), utm_content: qp("utm_content"), utm_term: qp("utm_term"), gclid: qp("gclid"), fbclid: qp("fbclid"), consent_status: consent(), created_at: new Date().toISOString(), timestamp: new Date().toISOString(), user_agent: navigator.userAgent || "" };
+      const done = () => { ev("form_submit"); ev("lead_form_submit"); location.href = redirect; };
       if (!goodEndpoint(endpoint)) { console.warn("FORM_ENDPOINT is not configured. Lead was not sent to server."); localStorage.setItem("leadaro_local_qa_leads", JSON.stringify([payload])); done(); return; }
       fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }).then(r => { if (!r.ok) throw Error(); done(); }).catch(() => { btn.disabled = false; status.textContent = "לא הצלחנו לשלוח את הטופס. אפשר לפנות ישירות בוואטסאפ."; });
     });

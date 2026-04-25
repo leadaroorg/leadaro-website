@@ -72,6 +72,7 @@ function normalizeLead(payload, request) {
     main_source: String(payload.main_source || "").trim(),
     main_lead_source: String(payload.main_lead_source || payload.main_source || "").trim(),
     page_url: String(payload.page_url || "").trim(),
+    page_path: String(payload.page_path || "").trim(),
     referrer: String(payload.referrer || "").trim(),
     utm_source: String(payload.utm_source || "").trim(),
     utm_medium: String(payload.utm_medium || "").trim(),
