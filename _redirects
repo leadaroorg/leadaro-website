@@ -1,4 +1,6 @@
 https://www.leadaro.org/* https://leadaro.org/:splat 301
+/ops /404.html 404
+/ops/* /404.html 404
 /privacy /privacy/index.html 200
 /terms /terms/index.html 200
 /thank-you /thank-you/index.html 200
