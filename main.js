@@ -30,11 +30,15 @@
       nav.classList.toggle("is-open", open); document.body.classList.toggle("menu-open", open); b.setAttribute("aria-expanded", open);
     });
     $$("[data-nav] a").forEach(a => a.addEventListener("click", () => { nav.classList.remove("is-open"); document.body.classList.remove("menu-open"); b?.setAttribute("aria-expanded", "false"); }));
-    addEventListener("scroll", () => {
+    const syncHeader = () => {
       const y = scrollY || document.documentElement.scrollTop, r = contact?.getBoundingClientRect();
-      h?.classList.toggle("is-sticky", y > 80);
+      const stuck = y > 80;
+      h?.classList.toggle("is-sticky", stuck);
+      h?.setAttribute("data-stuck", stuck ? "true" : "false");
       stick?.classList.toggle("is-visible", y > 600 && !(r && r.top < innerHeight && r.bottom > 0));
-    }, { passive: true });
+    };
+    syncHeader();
+    addEventListener("scroll", syncHeader, { passive: true });
   }
   function wireCookie() {
     const box = $("[data-cookie-banner]");

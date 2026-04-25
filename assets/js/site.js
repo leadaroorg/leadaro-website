@@ -167,6 +167,16 @@
     });
   }
 
+  function setupHeaderState() {
+    var header = document.querySelector(".site-header");
+    if (!header) return;
+    function syncHeaderState() {
+      header.setAttribute("data-stuck", (window.scrollY || document.documentElement.scrollTop) > 80 ? "true" : "false");
+    }
+    syncHeaderState();
+    window.addEventListener("scroll", syncHeaderState, { passive: true });
+  }
+
   function setupForm() {
     var form = document.querySelector("[data-lead-form]");
     if (!form) return;
@@ -225,6 +235,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    setupHeaderState();
     setupCookieBanner();
     setupWhatsappLinks();
     setupCtas();

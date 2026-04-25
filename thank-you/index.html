@@ -26,6 +26,7 @@
       --ff-mono:"JetBrains Mono",ui-monospace,monospace;
       --shadow:0 1px 2px rgba(22,20,18,.04),0 12px 30px rgba(22,20,18,.08);
       --container:1200px; --gutter:32px;
+      --ink-900:var(--ink); --ink-400:var(--muted); --paper-50:var(--bg); --paper-300:var(--border); --paper-ink-fg:#F0E9D7;
     }
     body{background:var(--bg);color:var(--ink);font-family:var(--ff-sans);}
   </style>
@@ -34,9 +35,19 @@
 <body>
   <header class="site-header" data-header>
     <div class="container nav">
-      <a class="brand" href="/" aria-label="Leadaro">
-        <span class="brand-mark" aria-hidden="true">L</span>
-        <bdi class="brand-word" dir="ltr" aria-hidden="true"><span>L</span><span>e</span><span>a</span><span>d</span><span>a</span><span>r</span><span>o</span></bdi>
+      <a class="logo" href="/#hero" aria-label="Leadaro — בדיקת לידים">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="0 0 18 18" width="18" height="18" focusable="false">
+            <rect x="0.75" y="0.75" width="16.5" height="16.5" fill="var(--paper-50)" stroke="var(--ink-900)" stroke-width="1.5" rx="2"/>
+            <line x1="4" y1="7" x2="14" y2="7" stroke="var(--ink-900)" stroke-width="1.5"/>
+            <line x1="8" y1="11" x2="14" y2="11" stroke="var(--ink-900)" stroke-width="1.5"/>
+          </svg>
+        </span>
+        <span class="logo__text">
+          <bdi class="logo__wordmark">Leadaro</bdi>
+          <span class="logo__rule" aria-hidden="true"></span>
+          <bdi class="logo__tag">AUDIT · A-PILOT</bdi>
+        </span>
       </a>
       <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
@@ -80,7 +91,20 @@
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <span>© Leadaro</span>
+      <a class="logo logo--footer" href="/#hero" aria-label="Leadaro — בדיקת לידים">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="0 0 18 18" width="18" height="18" focusable="false">
+            <rect x="0.75" y="0.75" width="16.5" height="16.5" fill="var(--paper-50)" stroke="var(--ink-900)" stroke-width="1.5" rx="2"/>
+            <line x1="4" y1="7" x2="14" y2="7" stroke="var(--ink-900)" stroke-width="1.5"/>
+            <line x1="8" y1="11" x2="14" y2="11" stroke="var(--ink-900)" stroke-width="1.5"/>
+          </svg>
+        </span>
+        <span class="logo__text">
+          <bdi class="logo__wordmark">Leadaro</bdi>
+          <span class="logo__rule" aria-hidden="true"></span>
+          <bdi class="logo__tag">AUDIT · A-PILOT</bdi>
+        </span>
+      </a>
       <nav aria-label="קישורים משפטיים">
         <a href="/privacy">מדיניות פרטיות</a>
         <a href="/terms">תנאי שימוש</a>

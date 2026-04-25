@@ -20,6 +20,12 @@
   --shadow-sm: 0 1px 2px rgba(22, 32, 27, 0.08), 0 8px 24px rgba(22, 32, 27, 0.06);
   --shadow-md: 0 18px 46px rgba(22, 32, 27, 0.12);
   --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Hebrew", Arial, sans-serif;
+  --ink-900: var(--ink);
+  --ink-400: var(--muted);
+  --paper-50: var(--paper);
+  --paper-300: var(--line-strong);
+  --ff-latin: Inter, system-ui, sans-serif;
+  --ff-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 * {
@@ -76,59 +82,73 @@ p {
   gap: 22px;
 }
 
-.brand {
+.logo {
+  direction: ltr;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   text-decoration: none;
+  color: var(--ink-900);
 }
 
-.brand-mark {
+.logo__mark {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid #b08a4a;
-  border-radius: 9px;
-  background: #1e2a38;
-  color: #ffffff;
-  font-family: Inter, system-ui, sans-serif;
-  font-weight: 800;
-  line-height: 1;
-  box-shadow: inset 0 -1px 0 rgba(176, 138, 74, 0.38);
+  flex: 0 0 auto;
 }
 
-.brand-word {
-  direction: ltr;
-  unicode-bidi: isolate;
+.logo__mark svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.logo__text {
   display: inline-flex;
-  align-items: baseline;
-  gap: 0.015em;
-  font-family: Assistant, Inter, system-ui, sans-serif;
-  font-size: 1.35rem;
-  font-weight: 900;
-  letter-spacing: 0.005em;
-  color: var(--ink);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
 }
 
-.brand-word span {
-  display: inline-block;
+.logo__wordmark {
+  font-family: var(--ff-latin);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  line-height: 1;
 }
 
-.brand-word span:first-child {
-  font-size: 1.16em;
-  line-height: 0.9;
-  transform: translateY(1px) rotate(-3deg);
-  color: #1e2a38;
+.logo__rule {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--paper-300);
+  margin: 2px 0;
 }
 
-.brand-word span:nth-child(4) {
-  transform: translateY(-1px);
+.logo__tag {
+  font-family: var(--ff-mono);
+  font-weight: 500;
+  font-size: 10px;
+  color: var(--ink-400);
+  letter-spacing: 0.04em;
+  line-height: 1;
 }
 
-.brand-word span:last-child {
-  color: #7b5a25;
-  transform: translateY(1px);
+.site-header[data-stuck="true"] .logo__rule,
+.site-header[data-stuck="true"] .logo__tag {
+  display: none;
+}
+
+.site-header[data-stuck="true"] .logo__mark svg,
+.logo--footer .logo__mark svg {
+  width: 16px;
+  height: 16px;
+}
+
+.site-header[data-stuck="true"] .logo__wordmark,
+.logo--footer .logo__wordmark {
+  font-size: 18px;
 }
 
 .nav-links {
@@ -837,10 +857,15 @@ details p {
 
 .footer-inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 18px;
   flex-wrap: wrap;
   color: var(--muted);
+}
+
+.footer-inner .logo {
+  color: var(--ink-900);
 }
 
 .footer-links {
@@ -954,6 +979,15 @@ details p {
   .nav-links,
   .nav-cta {
     display: none;
+  }
+
+  .site-header .logo__rule,
+  .site-header .logo__tag {
+    display: none;
+  }
+
+  .site-header .logo__wordmark {
+    font-size: 18px;
   }
 
   .hero {
