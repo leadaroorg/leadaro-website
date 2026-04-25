@@ -18,7 +18,6 @@ Production domain: https://leadaro.org
 ## Before live traffic
 
 - Verify the WhatsApp CTA opens the correct Leadaro number.
-- Add `LEAD_WEBHOOK_URL` in Cloudflare Pages.
 - Insert analytics IDs if needed.
 - Verify consent behavior.
 - Test form submit.
@@ -27,13 +26,22 @@ Production domain: https://leadaro.org
 - Check sitemap and robots.
 - Run mobile QA.
 
-## Current launch blockers
+## Production Status
 
-- TODO BEFORE LIVE TRAFFIC: Add `LEAD_WEBHOOK_URL` in Cloudflare Pages and test production lead delivery.
+- Domain live: yes
+- Form endpoint: `/api/lead`
+- Persistent storage: Google Sheets via Make
+- Email notification: pending SMTP/Gmail authorization
+- Current launch status: ready for manual outreach validation
+- Source of truth for new leads: Google Sheet
+
+Until email notification is connected, check the Leadaro Leads Google Sheet directly after outreach or form submissions.
 
 ## Make scenario
 
 Target flow: Webhook -> Google Sheets row -> Email notification to `info@leadaro.org`.
+
+Email notification is pending SMTP/Gmail authorization. When credentials are available, connect notification delivery to `info@leadaro.org` with subject: `ליד חדש מ־Leadaro`.
 
 Required Google Sheet columns:
 
