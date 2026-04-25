@@ -4,57 +4,99 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>תודה | Leadaro</title>
-  <meta name="description" content="תודה שפנית ל־Leadaro.">
+  <meta name="description" content="הפרטים התקבלו ב־Leadaro.">
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://leadaro.org/thank-you">
+  <link rel="canonical" href="https://leadaro.org/thank-you/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&display=swap"></noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap"></noscript>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E">
+  <style>
+    :root{
+      --bg:#F4F1EA; --surface:#FFFFFF; --surface-soft:#ECE6DA; --ink:#161412; --muted:#625D55; --border:#D8D0C2;
+      --primary:#1E2A38; --primary-dark:#111A24; --primary-soft:#E4E8EC;
+      --accent:#B08A4A; --accent-dark:#7B5A25; --accent-soft:#EFE3CF;
+      --success:#3F6B4F; --warning:#B76E22; --risk:#9E3D32;
+      --ff-display:"Frank Ruhl Libre","Heebo",serif;
+      --ff-sans:"Heebo",system-ui,sans-serif;
+      --ff-latin:"Inter",system-ui,sans-serif;
+      --ff-mono:"JetBrains Mono",ui-monospace,monospace;
+      --shadow:0 1px 2px rgba(22,20,18,.04),0 12px 30px rgba(22,20,18,.08);
+      --container:1200px; --gutter:32px;
+    }
+    body{background:var(--bg);color:var(--ink);font-family:var(--ff-sans);}
+  </style>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" data-header>
     <div class="container nav">
       <a class="brand" href="/" aria-label="Leadaro">
-        <span class="brand-mark">L</span>
         <span>Leadaro</span>
       </a>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+        <span class="visually-hidden">פתיחת תפריט</span>
+      </button>
+      <nav class="nav-links" id="primary-nav" data-nav aria-label="ניווט ראשי">
+        <a href="/#problem">הבעיה</a>
+        <a href="/#how">איך זה עובד</a>
+        <a href="/#pricing">מחיר</a>
+        <a href="/#faq">שאלות</a>
+      </nav>
+      <a class="header-cta" href="/#contact" data-primary-cta data-location="thank_you_nav">בדיקת התאמה</a>
     </div>
   </header>
 
-  <main class="thank-you">
-    <div class="container legal-content">
-      <p class="eyebrow">הפרטים התקבלו.</p>
-      <h1>תודה, קיבלנו את הפנייה.</h1>
-      <p class="section-lead">אם יש התאמה ראשונית, נחזור אליך לגבי בדיקת Leadaro. אפשר גם לפנות ישירות בוואטסאפ.</p>
-      <div class="cta-row">
-        <a class="button button-primary" href="#" data-whatsapp-link data-location="thank_you">דבר איתי בוואטסאפ</a>
-        <a class="button button-secondary" href="/">חזרה לעמוד הבית</a>
+  <main>
+    <section class="section thank-you-page">
+      <div class="container thank-you-grid">
+        <div class="thank-you-copy">
+          <p class="eyebrow">Leadaro · בדיקת התאמה</p>
+          <h1>הפרטים התקבלו</h1>
+          <p class="hero-subtitle">אם יש התאמה ראשונית לבדיקה, נחזור אליך לגבי פיילוט Leadaro.</p>
+          <p class="thank-you-note">בינתיים אפשר לפנות ישירות בוואטסאפ אם רוצים לקדם את הבדיקה מהר יותר.</p>
+          <div class="cta-row">
+            <a class="button button-primary" href="/">חזרה לדף הבית</a>
+            <a class="button button-secondary" href="#" data-whatsapp-link data-location="thank_you" data-whatsapp-message="שלום, השארתי פרטים באתר Leadaro ורוצה לבדוק התאמה לפיילוט">פנייה בוואטסאפ</a>
+          </div>
+        </div>
+
+        <aside class="thank-you-summary" aria-label="שלבי המשך">
+          <p class="section-kicker">מה קורה עכשיו</p>
+          <ol>
+            <li><span>01</span> קוראים את הפנייה ובודקים התאמה ראשונית.</li>
+            <li><span>02</span> אם יש נפח פניות מתאים, נשלח שאלון קצר.</li>
+            <li><span>03</span> מתאמים שיחה קצרה ומתחילים בדיקת Leadaro.</li>
+          </ol>
+        </aside>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
+    <div class="container footer-row">
       <span>© Leadaro</span>
-      <div class="footer-links">
+      <nav aria-label="קישורים משפטיים">
         <a href="/privacy">מדיניות פרטיות</a>
         <a href="/terms">תנאי שימוש</a>
-      </div>
+      </nav>
     </div>
   </footer>
 
   <div class="cookie-banner" data-cookie-banner hidden>
-    <div class="cookie-inner">
-      <p>אנחנו משתמשים בכלי מדידה לא חיוניים רק לאחר הסכמה, כדי להבין איך האתר עובד ולשפר אותו.</p>
-      <div class="cookie-actions">
-        <button class="button button-primary button-small" type="button" data-cookie-accept>מאשר</button>
-        <button class="button button-secondary button-small" type="button" data-cookie-reject>לא עכשיו</button>
-      </div>
+    <button class="cookie-close" type="button" data-cookie-dismiss aria-label="סגירת הודעת עוגיות">×</button>
+    <p>אנחנו משתמשים בכלי מדידה לא חיוניים רק לאחר הסכמה, כדי להבין איך האתר עובד ולשפר אותו.</p>
+    <div class="cookie-actions">
+      <button class="button button-primary" type="button" data-cookie-accept>אישור</button>
+      <a href="/privacy">מדיניות פרטיות</a>
     </div>
   </div>
 
   <script src="/assets/js/config.js"></script>
-  <script src="/assets/js/site.js"></script>
+  <script src="/main.js" defer></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   const goodEndpoint = e => e && e !== "FORM_ENDPOINT" && !/^https?:\/\/example\.com/i.test(e);
   const real = k => cfg[k] && cfg[k] !== ph[k];
   const consent = () => localStorage.getItem(key) || "unset";
-  const wa = () => "https://wa.me/" + (cfg.WHATSAPP_PHONE || "") + "?text=" + encodeURIComponent(cfg.WHATSAPP_MESSAGE || "");
+  const wa = msg => "https://wa.me/" + (cfg.WHATSAPP_PHONE || "") + "?text=" + encodeURIComponent(msg || cfg.WHATSAPP_MESSAGE || "");
   const addScript = src => { const s = document.createElement("script"); s.async = true; s.src = src; document.head.appendChild(s); };
   function loadTracking() {
     if (trackingLoaded) return; trackingLoaded = true;
@@ -19,7 +19,7 @@
   }
   function wireWhatsApp() {
     $$("[data-whatsapp-link]").forEach(a => {
-      a.href = wa();
+      a.href = wa(a.dataset.whatsappMessage);
       a.addEventListener("click", () => ev("whatsapp_click", { location: a.dataset.location || "page" }));
     });
   }
