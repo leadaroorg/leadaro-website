@@ -66,15 +66,23 @@ function normalizeLead(payload, request) {
   return {
     name: String(payload.name || "").trim(),
     phone: String(payload.phone || "").trim(),
+    name_phone: String(payload.name_phone || "").trim(),
+    business_field: String(payload.business_field || "").trim(),
     monthly_leads: String(payload.monthly_leads || "").trim(),
     main_source: String(payload.main_source || "").trim(),
+    main_lead_source: String(payload.main_lead_source || payload.main_source || "").trim(),
     page_url: String(payload.page_url || "").trim(),
     referrer: String(payload.referrer || "").trim(),
     utm_source: String(payload.utm_source || "").trim(),
     utm_medium: String(payload.utm_medium || "").trim(),
     utm_campaign: String(payload.utm_campaign || "").trim(),
+    utm_content: String(payload.utm_content || "").trim(),
+    utm_term: String(payload.utm_term || "").trim(),
+    gclid: String(payload.gclid || "").trim(),
+    fbclid: String(payload.fbclid || "").trim(),
     consent_status: String(payload.consent_status || "").trim(),
     created_at: String(payload.created_at || new Date().toISOString()).trim(),
+    timestamp: String(payload.timestamp || payload.created_at || new Date().toISOString()).trim(),
     user_agent: request.headers.get("User-Agent") || "",
     ip_country: request.cf && request.cf.country ? String(request.cf.country) : ""
   };

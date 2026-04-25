@@ -50,6 +50,7 @@
   }
   function wireEvents() {
     $$("[data-primary-cta]").forEach(a => a.addEventListener("click", () => ev("primary_cta_click", { location: a.dataset.location || "page" })));
+    $$("a[href^='tel:']").forEach(a => a.addEventListener("click", () => ev("phone_click", { location: a.dataset.location || "page" })));
     $$("details[data-faq]").forEach(d => d.addEventListener("toggle", () => d.open && ev("faq_open", { question: $("summary", d).textContent.trim() })));
     const p = $("[data-pricing]");
     if (p && "IntersectionObserver" in window) new IntersectionObserver((e, o) => e[0].isIntersecting && (ev("pricing_view"), o.disconnect()), { threshold: .35 }).observe(p);
@@ -61,15 +62,19 @@
     if (!form) return;
     form.addEventListener("submit", e => {
       e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
       const values = Object.fromEntries(new FormData(form).entries());
       if (values.website) return;
       ev("form_submit");
       const status = $("[data-form-status]", form), btn = $("button[type=submit]", form), endpoint = cfg.FORM_ENDPOINT || "", redirect = form.dataset.successUrl || "/thank-you";
       status.textContent = ""; btn.disabled = true;
-      const payload = { name: values.name || "", phone: values.phone || "", monthly_leads: values.monthly_leads || "", main_source: values.main_source || "", page_url: location.href, referrer: document.referrer || "", utm_source: qp("utm_source"), utm_medium: qp("utm_medium"), utm_campaign: qp("utm_campaign"), consent_status: consent(), created_at: new Date().toISOString() };
-      if (!goodEndpoint(endpoint)) { console.warn("FORM_ENDPOINT is not configured. Lead was not sent to server."); localStorage.setItem("leadaro_local_qa_leads", JSON.stringify([payload])); location.href = redirect; return; }
-      fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }).then(r => { if (!r.ok) throw Error(); location.href = redirect; }).catch(() => { btn.disabled = false; status.textContent = "לא הצלחנו לשלוח את הטופס. אפשר לפנות ישירות בוואטסאפ."; });
+      const namePhone = String(values.name_phone || "").trim(), source = values.main_lead_source || values.main_source || "";
+      const phoneMatch = namePhone.match(/(?:\+?972|0)?5\d(?:[-\s]?\d){7}/);
+      const payload = { name: values.name || namePhone, phone: values.phone || (phoneMatch ? phoneMatch[0] : namePhone), name_phone: namePhone, business_field: values.business_field || "", monthly_leads: values.monthly_leads || "", main_source: source, main_lead_source: source, page_url: location.href, referrer: document.referrer || "", utm_source: qp("utm_source"), utm_medium: qp("utm_medium"), utm_campaign: qp("utm_campaign"), utm_content: qp("utm_content"), utm_term: qp("utm_term"), gclid: qp("gclid"), fbclid: qp("fbclid"), consent_status: consent(), created_at: new Date().toISOString(), timestamp: new Date().toISOString(), user_agent: navigator.userAgent || "" };
+      const done = () => { ev("lead_form_submit"); location.href = redirect; };
+      if (!goodEndpoint(endpoint)) { console.warn("FORM_ENDPOINT is not configured. Lead was not sent to server."); localStorage.setItem("leadaro_local_qa_leads", JSON.stringify([payload])); done(); return; }
+      fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }).then(r => { if (!r.ok) throw Error(); done(); }).catch(() => { btn.disabled = false; status.textContent = "לא הצלחנו לשלוח את הטופס. אפשר לפנות ישירות בוואטסאפ."; });
     });
   }
-  document.addEventListener("DOMContentLoaded", () => { wireWhatsApp(); wireHeader(); wireCookie(); wireEvents(); wireForm(); });
+  document.addEventListener("DOMContentLoaded", () => { wireWhatsApp(); wireHeader(); wireCookie(); wireEvents(); wireForm(); if (document.body.dataset.page === "thank-you") ev("thank_you_view"); });
 })();
